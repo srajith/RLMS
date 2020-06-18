@@ -1,0 +1,123 @@
+{% extends 'base_template.html' %}
+
+{% block content %}
+					<div class="content">
+
+						<div class="module">
+							<div class="module-head">
+								<h3>Add Student</h3>
+							</div>
+							<div class="module-body">
+
+									<br />
+									<!-- title, author, description, available -->
+
+									<form action="" method="POST" class="form-horizontal row-fluid">
+										{{ form.hidden_tag() }}
+										<div class="control-group">
+											{{ form.name.label(class="control-label") }}
+											<div class="controls">
+											{% if form.name.errors %}
+												{{ form.name(class="span8 controls") }}
+												{% for error in form.name.errors %}
+													<span> {{ error }}</span>
+												{% endfor %}
+											{% else %}
+							                    {{ form.name(class="span8") }}
+											{% endif %}
+												
+											</div>
+												
+										</div>
+										<div class="control-group">
+											{{ form.email.label(class="control-label") }}
+											<div class="controls">
+											{% if form.email.errors %}
+												{{ form.email(class="span8 controls") }}
+												{% for error in form.email.errors %}
+													<span> {{ error }}</span>
+												{% endfor %}
+											{% else %}
+							                    {{ form.email(class="span8") }}
+											{% endif %}
+												
+											</div>
+												
+										</div>
+
+										<div class="control-group">
+											{{ form.year.label(class="control-label") }}
+											<div class="controls">
+											{% if form.year.errors %}
+												{{ form.year(class="span8 controls") }}
+												{% for error in form.year.errors %}
+													<span> {{ error }}</span>
+												{% endfor %}
+											{% else %}
+							                    {{ form.year(class="span8") }}
+											{% endif %}
+												
+											</div>
+												
+										</div>
+										<div class="control-group">
+											{{ form.branch.label(class="control-label") }}
+											<div class="controls">
+											{% if form.branch.errors %}
+												{{ form.branch(class="span8 controls") }}
+												{% for error in form.branch.errors %}
+													<span> {{ error }}</span>
+												{% endfor %}
+											{% else %}
+							                    {{ form.branch(class="span8") }}
+											{% endif %}
+												
+											</div>
+												
+										</div>
+										<div class="control-group">
+											<div class="controls">
+												{{ form.submit1(class="btn") }} 
+											</div>
+										</div>
+									</form>
+							</div>
+						</div>
+						
+						<div class="module">
+							<div class="module-head">
+								<h3>Delete Student</h3>
+							</div>
+							<div class="module-body">
+
+
+									<form action="" method="POST" class="form-horizontal row-fluid">
+										{{ del_form.hidden_tag() }}
+										<div class="control-group">
+											{{ del_form.id.label(class="control-label") }}
+											<div class="controls">
+											{% if del_form.id.errors %}
+												{{ del_form.id(class="span8 controls") }}
+												{% for error in del_form.id.errors %}
+													<span> {{ error }}</span>
+												{% endfor %}
+											{% else %}
+							                    {{ del_form.id(class="span8") }}
+											{% endif %}
+												
+											</div>
+												
+										</div>
+
+										<div class="control-group">
+											<div class="controls">
+												{{ del_form.submit2(class="btn") }} 
+											</div>
+										</div>
+									</form>
+							</div>
+						</div>
+					</div>
+
+
+{% endblock content %}

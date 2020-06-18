@@ -1,0 +1,93 @@
+{% extends 'base_template.html' %}
+
+{% block content %}
+					<div class="content">
+
+						<div class="module">
+							<div class="module-head">
+								<h3>Issue Book</h3>
+							</div>
+							<div class="module-body">
+
+									<br />
+									<!-- title, author, description, available -->
+
+									<form action="" method="POST" class="form-horizontal row-fluid">
+										{{ issue_form.hidden_tag() }}
+										<div class="control-group">
+											{{ issue_form.book_id.label(class="control-label") }}
+											<div class="controls">
+											{% if issue_form.book_id.errors %}
+												{{ issue_form.book_id(class="span8 controls") }}
+												{% for error in issue_form.book_id.errors %}
+													<span> {{ error }}</span>
+												{% endfor %}
+											{% else %}
+							                    {{ issue_form.book_id(class="span8") }}
+											{% endif %}
+												
+											</div>
+												
+										</div>
+										<div class="control-group">
+											{{ issue_form.student_id.label(class="control-label") }}
+											<div class="controls">
+											{% if issue_form.student_id.errors %}
+												{{ issue_form.student_id(class="span8 controls") }}
+												{% for error in issue_form.student_id.errors %}
+													<span> {{ error }}</span>
+												{% endfor %}
+											{% else %}
+							                    {{ issue_form.student_id(class="span8") }}
+											{% endif %}
+												
+											</div>
+												
+										</div>
+
+										<div class="control-group">
+											<div class="controls">
+												{{ issue_form.submit2(class="btn") }} 
+											</div>
+										</div>
+									</form>
+							</div>
+						</div>
+						
+						<div class="module">
+							<div class="module-head">
+								<h3>Return Book</h3>
+							</div>
+							<div class="module-body">
+
+
+									<form action="" method="POST" class="form-horizontal row-fluid">
+										{{ return_form.hidden_tag() }}
+										<div class="control-group">
+											{{ return_form.book_id.label(class="control-label") }}
+											<div class="controls">
+											{% if return_form.book_id.errors %}
+												{{ return_form.book_id(class="span8 controls") }}
+												{% for error in return_form.book_id.errors %}
+													<span> {{ error }}</span>
+												{% endfor %}
+											{% else %}
+							                    {{ return_form.book_id(class="span8") }}
+											{% endif %}
+												
+											</div>
+												
+										</div>
+
+										<div class="control-group">
+											<div class="controls">
+												{{ return_form.submit1(class="btn") }} 
+											</div>
+										</div>
+									</form>
+							</div>
+						</div>
+					</div>
+
+
+{% endblock content %}

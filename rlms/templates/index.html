@@ -1,0 +1,19 @@
+﻿{% extends 'base_template.html' %}
+{% block content %}
+                        <div class="content">
+                            <div class="btn-controls">
+                                <div class="btn-box-row row-fluid">
+                                    <a href="{{ url_for('all_books') }}" class="btn-box big span4"><i class="icon-book"></i>
+                                        <p class="text-muted">
+                                            Find Books</p>
+                                    </a><a href="{{ url_for('issued_books') }}" class="btn-box big span4"><i class="icon-list"></i>
+                                        <p class="text-muted">
+                                            Find issued Books</p>
+                                    </a><a href="{{ url_for('all_students') }}" class="btn-box big span4"><i class="icon-user"></i>
+                                        <p class="text-muted">
+                                            Find Students</p>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+{% endblock content %}
